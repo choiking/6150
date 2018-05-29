@@ -1,0 +1,22 @@
+<!doctype html>
+<html ng-app='myApp'>
+  <head>
+    <title>My AngularJS App</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.6/angular.min.js"></script>
+      
+     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.6/angular-route.js"></script>  
+  </head>
+  <body>
+      <div>
+          <h1>What you want to inject</h1>
+          <a href="#apple">Apple</a>
+          <a href="#orange">Orange</a>
+      </div>
+      <div ng-view>Contents are injected here</div>
+      <div>
+        <h1>This comes after injection</h1>
+      </div>
+      <script src="app.js"></script>
+  </body>
+    
+</html>

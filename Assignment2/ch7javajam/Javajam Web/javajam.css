@@ -1,0 +1,98 @@
+body {
+	  /*background-color: #F5F5DC;*/
+	  background:url("javabackground.gif") no-repeat center center;
+	  background-size: cover;
+}
+#wrapper {
+     margin: 0 auto;
+     width: 80%;
+     background-color: #E2D2B0;
+     min-width: 960px;
+     max-width: 2048px;
+     box-shadow: 10px 10px 5px  #2E0000;
+}
+header { background-color: #D2B48C;
+}
+h1 {
+	margin-bottom: 0; 
+    background: url("javalogo.gif") no-repeat center center;
+    background-size: cover;
+    height: 140px;
+    margin: 0;
+    text-indent: -9999px;
+} 
+nav {
+	text-align: center;
+	padding: 10px;
+	float: left;
+	width: 160px;
+}
+nav ul {
+	list-style-type: none;
+}
+nav a {
+	text-decoration: none;
+}
+
+nav a:link {
+	color: #795240;
+}
+
+nav a:visited {
+	color: #A58366;
+}
+nav a:hover {
+	color: #F5F5DC;
+}
+
+nav ul {
+	text-decoration: none;
+	padding-left: 0px;
+	font-size: 1.2em;
+}
+main {
+	padding: 20px;
+	background-color: #F5F5DC;
+	margin-left: 175px;
+}
+main img {
+    float: left;
+    padding-right: 2em;
+}
+main ul {
+    list-style-position: inside;
+}
+main div {
+    overflow: auto;
+    font-size: 90%;
+    padding-left: 5%;
+    padding-right: 5%;
+}
+#hero {
+	height: 400px;
+	color:#F5F5DC;
+	background-image: url("heroroad.jpg");
+	background-size: 100% 100%;
+}
+.news {
+	margin-left: 20%;
+	margin-right: 20%;
+}
+footer a:link {
+    color: #2E0000;
+}
+footer a:visited {
+    color: #000000;
+}
+footer a:hover {
+    color: #F5F5DC;
+}
+footer {
+	background-color: #D2B48C;
+	color: #000000;
+	text-align: center;
+	padding: 10px;
+}   
+h3 {
+	background-color: #ffdd99;
+}

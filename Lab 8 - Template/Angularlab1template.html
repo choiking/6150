@@ -1,0 +1,217 @@
+<html>
+   
+   <head>
+      <title>Angular JS Modules</title>
+      <script src = "http://ajax.googleapis.com/ajax/libs/angularjs/1.3.14/angular.min.js"></script>
+      <script src = "controller.js"></script>
+      
+      <style>
+         table, th , td {
+            border: 1px solid grey;
+            border-collapse: collapse;
+            padding: 5px;
+         }
+         
+         table tr:nth-child(odd) {
+            background-color: #f2f2f2;
+         }
+         
+         table tr:nth-child(even) {
+            background-color: #ffffff;
+         }
+		 
+.ClassA{
+  background-color:yellow;
+  color:red;
+}
+.ClassB{
+  background-color:red;
+  color:yellow;
+}
+
+.ClassC{
+    background-color:green;
+    color:blue;
+}
+
+.pending-delete {
+  background-color: pink
+}
+      </style>
+      
+   </head>
+   
+   <body >
+   
+   <!-- Part 1 code -->
+      <h2>AngularJS Sample Application</h2>
+      <div>
+         
+		 
+         <table border = "0">
+            <tr>
+               <td>Enter first name:</td>
+               <td><input type = "text" ng-model="student.firstName"></td>
+            </tr>
+         
+            <tr>
+               <td>Enter last name: </td>
+               <td><input type = "text" ng-model="student.lastname"></td>
+            </tr>
+         
+            <tr>
+               <td>Name: </td>
+               <td></td>
+            </tr>
+         
+            <tr>
+               <td>Subject:</td>
+               <td>
+               
+                  <table>
+                     <tr>
+                        <th>Name</th>
+                        <th>Marks</th>
+                     </tr>
+                  
+                     <tr >
+                        <td></td>
+                        <td></td>
+                     </tr>
+                  </table>
+                  
+               </td>
+            </tr>
+         </table>
+         <!-- Part 1 code -->
+		 
+		 <!-- Part 2 code -->
+		  <form name = "studentForm">
+            <table border = "0">
+               <tr>
+                  <td>Enter first name:</td>
+                  <td><input name = "firstname" type = "text" required/>
+                     <span style = "color:red" ng-show = "studentForm.firstName.Invalid">
+                        <span ng-show = "studentForm.firstName">First Name is required.</span>
+                     </span>
+                     <span style = "color:red" >
+                        <span >Only alphabets permitted for name.</span>
+                     </span>
+                  </td>
+               </tr>
+               
+               <tr>
+                  <td>Enter last name: </td>
+                  <td><input name = "lastname"  type = "text" required/>
+                     <span style = "color:red" >
+                        <span >Last Name is required.</span>
+                     </span>
+                     <span style = "color:red" >
+                        <span ng-show="studentForm.firstName">Only alphabets permitted for name.</span>
+                     </span>
+                  </td>
+               </tr>
+               
+               <tr>
+                  <td>Email: </td><td><input name = "email" type = "email"  required/>
+                     <span style = "color:red" >
+                        <span>Email is required.</span>
+                        <span>Invalid email address.</span>
+                     </span>
+                  </td>
+               </tr>
+               
+               <tr>
+                  <td>
+                     <button>Reset</button>
+                  </td>
+                  <td>
+                     <button>Submit</button>
+                  </td>
+               </tr>
+			     
+            <tr>
+               <td>Enter subject: </td>
+               <td><input type = "text" /></td>
+            </tr>
+					
+            </table>
+			<!-- Part 2 code -->
+			
+			<!-- Part 3 code -->
+			  <table border = "0">
+            <tr>
+               <td>Name in Upper Case: </td>
+               <td></td>
+            </tr>
+         
+            <tr>
+               <td>Name in Lower Case: </td>
+               <td></td>
+            </tr>
+         
+            <tr>
+               <td>fees: </td>
+               <td></td>
+            </tr>
+				
+            <tr>
+               <td>Subject:</td>
+
+               <td>
+                  <ul>
+                     <li >
+                                     
+                     </li>
+                  </ul>
+               </td>
+            </tr>
+         </table>
+		 <!-- Part 3 code -->
+		 
+		 <!-- Part 4 code -->
+		  <table border = "0">
+            <tr>
+               <td><input type = "checkbox">Disable Button</td>
+               <td><button >Click Me!</button></td>
+            </tr>
+            
+            <tr>
+               <td><input type = "checkbox" >Show Button</td>
+               <td><button>Click Me!</button></td>
+            </tr>
+            
+            <tr>
+               <td><input >Hide Button</td>
+               <td><button >Click Me!</button></td>
+            </tr>
+            
+            <tr>
+               <td><p>Total clicks: {{count}}</p></td>
+               <td><button>Click Me!</button></td>
+            </tr>
+         </table>
+		 <!-- Part 4 code -->
+         </form>
+		 
+		 <!-- Part 5 code -->
+		  <div ></div>
+		
+		<!-- Part 5 code -->
+ 
+		<!-- Part 6 code -->
+      <input type="text" placeholder="enter a color name" />
+
+       <div >
+          Name: , Title: 
+          <input type="checkbox"/>
+          <span >(will be deleted)</span>
+       </div>
+
+      <p>
+         <div >I will hide if the color is set to 'red'.</div>	        
+		</p>
+	  <!-- Part 6 code -->
+	  
+   </body>
+</html>

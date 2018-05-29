@@ -1,0 +1,128 @@
+
+.navbar {
+    margin-bottom: 0;
+    background-color: #e3eafe;
+    font-family: Tahoma;
+    z-index: 9999;
+    border: 0;
+    font-size: 14px !important;
+    line-height: 1.42857143 !important;
+    letter-spacing: 2px;
+    border-radius: 0;
+}
+.navbar li a, .navbar .navbar-brand {
+    color: #0a0a0a !important;
+}
+.navbar-nav li a:hover, .navbar-nav li.active a {
+    color: #fdac16 !important;
+    background-color: rgba(221,253,94,0.21) !important;
+}
+
+.navbar-default {
+    border-color: transparent;
+    color: #fff !important;
+}
+
+
+.jumbotron {
+    background-image: url("../images/buy.gif");
+}
+
+.test ul {
+    list-style: none;
+    padding-left: 0.001%;
+}
+
+.test li {
+    float: left;
+    width: 150px;
+    background: #CCC;
+    margin-left: 10px;
+    line-height: 30px;
+}
+
+.test a {
+    display: block;
+    height: 30px;
+}
+
+.test a:link {
+    color: #666;
+    background: #CCC;
+    text-decoration: none;
+}
+
+.test a:visited {
+    color: #666;
+    text-decoration: underline;
+}
+
+.test a:hover {
+    color: #FFF;
+    font-weight: bold;
+    text-decoration: none;
+    background: #761c19 no-repeat 5px 12px;
+}
+
+
+.input-group-btn {
+    padding-top: 7.4%;
+}
+
+
+
+
+
+
+
+.multi-item-carousel{
+  .carousel-inner{
+    > .item{
+      transition: 500ms ease-in-out left;
+    }
+    .active{
+      &.left{
+        left:-33%;
+      }
+      &.right{
+        left:33%;
+      }
+    }
+    .next{
+      left: 33%;
+    }
+    .prev{
+      left: -33%;
+    }
+    @media all and (transform-3d), (-webkit-transform-3d) {
+      > .item{
+        // use your favourite prefixer here
+        transition: 500ms ease-in-out left;
+        transition: 500ms ease-in-out all;
+        backface-visibility: visible;
+        transform: none!important;
+      }
+    }
+  }
+  .carouse-control{
+    &.left, &.right{
+      background-image: none;
+    }
+  }
+}
+
+// non-related styling:
+body{
+  background: #333;
+  color: #ddd;
+}
+h1{
+  color: white;
+  font-size: 2.25em;
+  text-align: center;
+  margin-top: 1em;
+  margin-bottom: 2em;
+  text-shadow: 0px 2px 0px rgba(0, 0, 0, 1);
+}
+
+

@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link href="bootstrap/css/all.css" rel="stylesheet">
+    <link href="bootstrap/css/bootstrap.css" rel="stylesheet" media="all">
+    <link href="bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <script src="bootstrap/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="http://cdn.static.runoob.com/libs/bootstrap/3.3.7/css/bootstrap.min.css">
+    <title>Home</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style>
+
+        .buy a:link{
+            background-color: #761c19;
+            color: #FFFFFF;
+            font-weight: bold;
+            text-decoration: none;
+        }
+        body{
+            background-color: rgba(189,209,82,0.13);
+        }
+
+        .footer-1{
+            text-align: center;
+            color:#000033;
+        }
+    </style>
+</head>
+<body>
+
+<nav class="navbar navbar-default navbar-fixed-top">
+    <div class="container-fluid">
+        <div class="navbar-header">
+            <a class="navbar-brand" href="homepage.html">WebSiteName</a>
+        </div>
+        <ul class="nav navbar-nav">
+            <li class="dropdown">
+                <a class="dropdown-toggle" data-toggle="dropdown" href="#">Buy
+                    <span class="caret"></span></a>
+                <ul class="dropdown-menu">
+                    <li><a href="#">Furniture</a></li>
+                    <li><a href="#">Electronic Product</a></li>
+                    <li><a href="#">Daily Necessities</a></li>
+                </ul>
+            </li>
+            <li class="dropdown">
+                <a class="dropdown-toggle" data-toggle="dropdown" href="#">Free
+                    <span class="caret"></span></a>
+                <ul class="dropdown-menu">
+                    <li><a href="#">Furniture</a></li>
+                    <li><a href="#">Electronic Product</a></li>
+                    <li><a href="#">Daily Necessities</a></li>
+                </ul>
+            </li>
+            <li><a href="#">Estimate</a></li>
+
+            <li><a href="#">Storage</a></li>
+            <li><a href="#">Transportation</a></li>
+
+
+        </ul>
+        <ul class="nav navbar-nav navbar-right">
+            <li><a href="#"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
+            <li><a href="#"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+        </ul>
+    </div>
+</nav>
+
+
+    <div class="jumbotron text-center">
+        <h1>SecondHand</h1>
+        <p>Find What You Want</p>
+
+        <br>
+
+        <form class="form-inline">
+
+            <br>
+            <div class="input-group">
+                <div class="test">
+                <ul>
+                    <li class="buy"><a href="#" >BUY</a></li>
+                    <li class="free"><a href="#" >FREE</a></li>
+                    <li class="estimate"><a href="#" >ESTIMATE</a></li>
+                </ul>
+                </div>
+                <input type="search" class="form-control" size="40">
+                <div class="input-group-btn">
+                    <button type="button" class="btn btn-danger">Search</button>
+                </div>
+            </div>
+        </form>
+    </div>
+
+
+<h1 style="text-align: center;font-size: large">The things What you want</h1>
+<div    id="myCarousel" class="carousel slide" style="width: 60%;margin: auto">
+    <ol class="carousel-indicators">
+        <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+        <li data-target="#myCarousel" data-slide-to="1"></li>
+        <li data-target="#myCarousel" data-slide-to="2"></li>
+    </ol>
+    <div class="carousel-inner" >
+        <div class="item active">
+            <img src="telephone.jpg" style="width: 100%" alt="First slide">
+            <div class="carousel-caption">CellPhone</div>
+        </div>
+        <div class="item">
+            <img src="sofa.jpg" alt="Second slide">
+            <div class="carousel-caption">Furniture</div>
+        </div>
+        <div class="item">
+            <img src="chuju.jpg" alt="Third slide">
+            <div class="carousel-caption">Kitchen</div>
+        </div>
+    </div>
+    <a class="carousel-control left" href="#myCarousel"
+       data-slide="prev">&lsaquo;</a>
+    <a class="carousel-control right" href="#myCarousel"
+       data-slide="next">&rsaquo;</a>
+</div>
+<br>
+<br>
+
+
+
+
+
+
+<div class="container">
+  <h1>Use Bootstrap's carousel to show multiple items per slide.</h1>
+  <div class="row">
+    <div class="col-md-12">
+      <div class="carousel slide multi-item-carousel" id="theCarousel">
+        <div class="carousel-inner">
+          <div class="item active">
+            <div class="col-xs-4"><a href="#1"><img src="furniture/bed.jpg" class="img-responsive"></a></div>
+          </div>
+          <div class="item">
+            <div class="col-xs-4"><a href="#1"><img src="furniture/sofa.jpg" class="img-responsive"></a></div>
+          </div>
+          <div class="item">
+            <div class="col-xs-4"><a href="#1"><img src="furniture/bookset.jpg" class="img-responsive"></a></div>
+          </div>
+          <div class="item">
+            <div class="col-xs-4"><a href="#1"><img src="furniture/chair.jpg" class="img-responsive"></a></div>
+          </div>
+          <div class="item">
+            <div class="col-xs-4"><a href="#1"><img src="furniture/closet.jpg" class="img-responsive"></a></div>
+          </div>
+          <!-- <div class="item">
+            <div class="col-xs-4"><a href="#1"><img src="furniture/closet.jpg" class="img-responsive"></a></div>
+          </div> -->
+          <!-- add  more items here -->
+          <!-- Example item start:  -->
+          
+         <!--  <div class="item">
+            <div class="col-xs-4"><a href="#1"><img src="furniture/closet.jpg" class="img-responsive"></a></div>
+          </div> -->
+          
+          <!--  Example item end -->
+        </div>
+        <a class="left carousel-control" href="#theCarousel" data-slide="prev"><i class="glyphicon glyphicon-chevron-left"></i></a>
+        <a class="right carousel-control" href="#theCarousel" data-slide="next"><i class="glyphicon glyphicon-chevron-right"></i></a>
+      </div>
+    </div>
+  </div>
+</div>
+</body>
+
+<div class="footer-1">
+<footer>
+
+
+    <i>
+        <small>Copyright &copy; 2017 Second Hand Company<br>
+            <a href="mailto:members@secondhand.com">members@secondhand.com</a>
+        </small>
+    </i>
+
+</footer>
+<script src="bootstrap/js/localjs.js"></script>
+</div>
+</html>

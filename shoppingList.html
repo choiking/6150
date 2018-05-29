@@ -1,0 +1,136 @@
+<html ng-app="ngApp">
+  <head>
+    
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css">
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.3.14/angular.min.js"></script>
+    <script type="text/javascript">
+        var myApp = angular.module('ngApp', []);
+
+  myApp.controller('CartController', function($scope) {
+
+  $scope.cartData = [
+    {'name': 'Apple', qty: 1, price: 1.10},
+    {'name': 'Banana', qty: 1, price: 1.99},
+    {'name': 'Cake', qty: 1, price: 3.22},
+    {'name': 'DQ', qty: 1, price: 1.88},
+    {'name': 'egg', qty: 1, price: 2.33},
+    {'name': 'food', qty: 1, price: 3.44},
+    {'name': 'good', qty: 1, price: 5.33},
+    {'name': 'hot milk', qty: 1, price: 3.87},
+    {'name': 'ink', qty: 1, price: 4.88},
+    {'name': 'jacket', qty: 1, price: 5.99}
+  ];
+
+  $scope.promoteRate = 100;
+  $scope.remove = function(index) {
+    $scope.cartData.splice(index, 1);
+  }
+  
+  $scope.total = function() {
+        var total = 0;
+        angular.forEach($scope.cartData, function(item) {
+            total += item.qty * item.price;
+        })
+
+        return total * $scope.promoteRate * 0.01;
+    }
+
+
+   $scope.states = [
+    {name: 'AL', tax: 4},{name: 'AK', tax: 0},{name: 'AZ', tax: 5.6},{name: 'AR', tax: 6.5},{name: 'CA', tax: 7.5},
+    {name: 'CO', tax: 2.9},{name: 'CT', tax: 6.35},{name: 'DE', tax: 0},{name: 'DC', tax: 5.75},{name: 'FL', tax: 6},{name: 'GA', tax: 4},{name: 'HI', tax: 4},{name: 'ID', tax: 6},{name: 'IL', tax: 6.25},{name: 'IN', tax: 7},{name: 'IA', tax: 6},{name: 'KS', tax: 6.15},{name: 'KY', tax: 6},{name: 'LA', tax: 4},{name: 'ME', tax: 5.5},{name: 'MD', tax: 6},{name: 'MA', tax: 6.25},{name: 'MI', tax: 6},{name: 'MN', tax: 6.875},{name: 'MS', tax: 7},{name: 'MO', tax: 4.225},{name: 'MT', tax: 0},{name: 'NE', tax: 5.5},{name: 'NV', tax: 6.85},{name: 'NH', tax: 0},{name: 'NJ', tax: 7},{name: 'NM', tax: 5.125},{name: 'NY', tax: 4},{name: 'NC', tax: 4.75},{name: 'ND', tax: 5},{name: 'OH', tax: 5.75},{name: 'OK', tax: 4.5},{name: 'OR', tax: 0},{name: 'Other', tax: '99'},{name: 'PA', tax: 6},{name: 'RI', tax: 7},{name: 'SC', tax: 6},{name: 'SD', tax: 4},{name: 'TN', tax: 7},{name: 'TX', tax: 6.25},{name: 'UT', tax: 4.7},{name: 'VT', tax: 6},{name: 'VA', tax: 4.3},{name: 'WA', tax: 6.5},{name: 'WV', tax: 6},{name: 'WI', tax: 5},{name: 'WY', tax: 4}];
+  // Set the default tax rate. 1 = total is multiplied by 1 (aka no tax)
+  $scope.taxRate = 1;
+   
+   $scope.getAfterTax = function (rate) {
+    var totalAfterTax = 0;
+    return $scope.total = Number($scope.total) * Number(rate);
+  }
+  
+  $scope.add_cart = function(item){
+          if(item){
+            $scope.carts.push({p_name: item.name, p_price: item.price});
+          } 
+        }
+
+});
+
+    </script>
+  </head>
+  <body ng-controller="CartController" class="container">
+    
+    
+   
+    <table class="table" ng-show="cartData.length > 0">
+      <thead>
+        <tr>
+          <th>Item</th>
+          <th>Price</th>
+          <th colspan="2">Quantity</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr ng-repeat="item in cartData">
+          <td>{{item.name}}</td>
+          <td><input type="number" ng:model="item.price" ng:required class="input-mini"></td>
+          <td><input type="number" ng:model="item.qty" ng:required class="input-mini"></td>
+          <td>
+            <button ng-click="remove($index)" class="btn btn-default">Remove</button>
+          </td>
+      
+        </tr>
+      </tbody>
+    </table>
+    <table class="table">
+    <tr>
+    <td>Promote rate: <span><input type = "number" ng:model="promoteRate" class="input-mini">%</span></td>
+</tr>
+    <tr>
+     <td>   State Tax:  
+          <select ng-model="taxState" class="taxState" id="taxStateSelected" ng-options="s.name for s in states" ng-change="toggleOtherTax(taxState.tax)">
+          </select>
+    </td>
+</tr>
+    <tr>
+        <td>Total:<span> {{total() | currency}}</span></td>
+</tr>
+</table>
+<!-- <table class = "table">
+            <thead>
+              <tr>
+                <th>Product</th>
+                <th>Price</th>
+                <th></th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr ng-repeat = "cart in carts" ng-init = "setTotals(cart)">
+                <td>{{cart.p_name}}</td>
+                <td>${{cart.p_price}}</td>
+                <td><button type="button" ng-click = "remove_cart(cart)"; class="btn btn-danger">Remove</button></td>
+              </tr>
+                
+              <tr>
+                <td align="left" ><a href="Billing.html"><button type="button" class="btn btn-success" onclick="window.location.href('Billing.html')">Check out</button></a></td>
+                <td align = "right">Total</td>
+                <td>${{total}}</td>
+                <td>Tax</td>
+                <td>${{tax}}</td>
+              </tr>
+            </tbody>
+          </table> -->
+        <form name="myForm">
+<p>Shipping Address:
+<input ng-model="myAdress" required>
+<span ng-show="myForm.myAddress.$touched && myForm.myAddress.$invalid">The shipping Adress is required.</span>
+</p>
+
+<p>Address:
+<input name="myAddress" ng-model="myAddress" required>
+<span ng-show="myForm.myAddress.$touched && myForm.myAddress.$invalid">The billing Adress is required.</span>
+</p>
+
+
+    
+  </body>
+</html>

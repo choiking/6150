@@ -1,0 +1,86 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+	<meta http-equiv="content-type" content="text/html; charset=iso-8859-1" />
+	<title>Submit a URL</title>
+	
+	<script type="text/javascript" language="Javascript">
+	<!-- // Hide script contents from old browsers.
+	
+	function check_data(my_form) {
+	
+		var problem = false; // Flag variable.
+		
+		// Validate the name.
+		if (my_form.name.value == "") {
+			alert ("Enter your name.");
+			my_form.name.value = "*** Name";
+			my_form.name.focus();
+			problem = true;	
+		}
+		
+		// Validate the email.
+		if (my_form.email.value == "") {
+			alert ("Enter your email address.");
+			my_form.email.value = "*** Email Address";
+			my_form.email.focus();
+			problem = true;	
+		}
+		
+		// Validate the URL.
+		if (my_form.url.value == "") {
+			alert ("Enter the URL.");
+			my_form.url.value = "*** URL";
+			my_form.url.focus();
+			problem = true;	
+		}
+		
+		// Validate the URL category.
+		if ((my_form.url_category.selectedIndex == 0) || (my_form.url_category.value == 0) ) {
+			alert ("Please select a category for this URL.");
+			problem = true;	
+		}
+		
+		// Return true/false based upon problem.
+		if (problem) {
+			return false;
+		} else { 
+			return true; 
+		}
+		
+	} // End of function definition.
+	
+	//-->
+	</script>
+	
+</head>
+<body>
+<!-- Script 10.6 - submit_url.html -->
+
+<form name="url_form" action="handle_submit_url.php" method="post" onsubmit="return check_data(this)">
+	
+	<fieldset><legend>Enter your information in the form below:</legend>
+	
+	<p><b>Your Name:</b> <input type="text" name="name" size="40" maxlength="60" /></p>
+	
+	<p><b>Email Address:</b> <input type="text" name="email" size="40" maxlength="60" /> </p>
+	
+	<p><b>URL:</b> <input type="text" name="url" size="40" maxlength="80" /></p>
+	
+	<p><b>URL Category:</b> <select name="url_category">
+		<option>Choose One</option>
+		<option value="3">Code Libraries</option>
+		<option value="6">General Database</option>
+		<option value="5">General MySQL</option>
+		<option value="1">General PHP</option>
+		<option value="4">Programming</option>
+		<option value="2">Web Development</option>
+	</select></p>
+	
+	</fieldset>
+	<div align="center"><input type="submit" name="submit" value="Submit" /></div>
+
+</form>
+</body>
+</html>

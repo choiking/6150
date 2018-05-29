@@ -1,0 +1,36 @@
+<div class = "main-container">
+<div class="login-container">
+  <h1>Log In</h1>
+  <form id="loginForm"  action="" method="post" name="myForm">
+
+    <table>
+      <tr>
+        <td>
+          <input [(ngModel)]="userName" type="text" name="username" class="username" placeholder="username" autocomplete="off" />
+          <span style="color:red" ng-show="myForm.userName.$dirty && myForm.userName.$invalid">
+         <span ng-show="myForm.userName.$error.required">Username is required.</span>
+  </span>
+        </td>
+      </tr>
+      <tr>
+        <td><input [(ngModel)]="password" type="password"  name="password" class="password" placeholder="password"  oncontextmenu="return false" onpaste="return false"/>
+          <span style="color:red" ng-show="myForm.password.$dirty && myForm.password.$invalid">
+         <span ng-show="myForm.password.$error.required">Password is required.</span></span>
+        </td>
+      </tr>
+      <tr><td class = "red">{{warning}}</td></tr>
+      <tr>
+        <td><button type="submit" (click)="checkIfUserValid()" >submit</button></td>
+      </tr>
+      <tr><br>
+      <a routerLink="/row" >sign up</a>
+      </tr>
+     <tr>
+      <td><div id = "add"></div></td>
+     </tr>
+    </table>
+  </form>
+
+</div>
+
+</div>

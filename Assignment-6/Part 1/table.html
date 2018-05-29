@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+
+<!-- Also read chapter 9 from slides - Regular Expressions -->
+
+<html>
+<head>
+	<title>Table CheckList</title>
+	<link rel="stylesheet" type="text/css" href="table.css">
+	<link rel="stylesheet" type="text/css" href="style.css">
+	
+</head>
+<body onload="disableButton()">
+	<table id="myTable">
+		<tr>
+			<th></th>
+			<th>STUDENT</th>
+			<th>ADVISOR</th>
+			<th>AWARD<br/>STATUS</th>
+			<th>SEMESTER</th>
+			<th>TYPE</th>
+			<th>BUDGET<br />#</th>
+			<th>PERCENTAGE</th>
+		</tr>
+		<tr id="row1">
+			<td><input type="checkbox" id="cb1" onclick="cbEvent(1);"/><br /><br /><a href="#" onclick="toggle(1)"><img src="down.png" width="25px" /></a></td>
+			<td>Student 1</td>
+			<td>Teacher 1</td>
+			<td>Approved</td>
+			<td>Fall</td>
+			<td>TA</td>
+			<td>12345</td>
+			<td>100%</td>
+		</tr>
+		<tr class="dropDownTextArea" id="textArea1" style="display: none;"><td colspan="8">
+			Advisor:<br /><br />
+			Award Details<br />
+			Summer 1-2014(TA)<br />
+			<p>Budget Number:<img src="pencil.png" width="25px" /></p>
+			<p>Tuition Number: <img src="pencil.png" width="25px" /></p>
+			Comments:<br /><br /><br />
+			Award Status:<br /><br /><br />
+		</td></tr>
+		<tr id="row2">
+			<td><input type="checkbox" id="cb2" onclick="cbEvent(2);"/><br /><br /><a href="#" onclick="toggle(2)"><img src="down.png" width="25px" /></a></td>
+			<td>Student 2</td>
+			<td>Teacher 2</td>
+			<td>Approved</td>
+			<td>Fall</td>
+			<td>TA</td>
+			<td>23456</td>
+			<td>100%</td>
+		</tr>
+		<tr class="dropDownTextArea" id="textArea2" style="display: none;"><td colspan="8">
+			Advisor:<br /><br />
+			Award Details<br />
+			Summer 1-2014(TA)<br />
+			<p>Budget Number:<img src="pencil.png" width="25px" /></p>
+			<p>Tuition Number: <img src="pencil.png" width="25px" /></p>
+			Comments:<br /><br /><br />
+			Award Status:<br /><br /><br />
+		</td></tr>
+		<tr id="row3">
+			<td><input type="checkbox" id="cb3" onclick="cbEvent(3);"/><br /><br /><a href="#" onclick="toggle(3)"><img src="down.png" width="25px" /></a></td>
+			<td>Student 3</td>
+			<td>Teacher 3</td>
+			<td>Approved</td>
+			<td>Fall</td>
+			<td>TA</td>
+			<td>34567</td>
+			<td>100%</td>
+		</tr>
+		<tr class="dropDownTextArea" id="textArea3" style="display: none;"><td colspan="8">
+			Advisor:<br /><br />
+			Award Details<br />
+			Summer 1-2014(TA)<br />
+			<p>Budget Number:<img src="pencil.png" width="25px" /></p>
+			<p>Tuition Number: <img src="pencil.png" width="25px" /></p>
+			Comments:<br /><br /><br />
+			Award Status:<br /><br /><br />
+		</td></tr>
+	</table>
+
+	<br /><br />
+	<button id="button" onclick="location.href='http://google.com';">SUBMIT SELECTED AWARDS</button>
+
+	<nav class="socialmediaicons">
+		<p>CONNECT WITH ME!</p>
+	<ul><li><img src="images/facebook.png"></li>
+		<li><img src="images/twitter.png"></li>
+		<li><img src="images/flickr.png"></li>
+		<li><img src="images/youtube.png"></li>
+	</ul>
+	</nav>
+	<script src="https://code.jquery.com/jquery-1.11.3.min.js"></script>
+	<script src="script.js"></script>
+</body>
+</html>

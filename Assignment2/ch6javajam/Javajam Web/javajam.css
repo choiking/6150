@@ -1,0 +1,57 @@
+body {
+	  /*background-color: #F5F5DC;*/
+	  background:url("javabackground.gif") no-repeat center center;
+	  background-size: cover;
+}
+#wrapper {
+     margin: 0 auto;
+     width: 80%;
+     background-color: #F5F5DC;
+     min-width: 960px;
+     max-width: 2048px;
+     box-shadow: 10px 10px 5px  #2E0000;
+}
+header { background-color: #D2B48C;
+}
+a {
+	text-decoration: none;
+}
+h1 {
+	margin-bottom: 0; 
+    background: url("javalogo.gif") no-repeat center center;
+    background-size: cover;
+    height: 140px;
+    margin: 0;
+    text-indent: -9999px;
+} 
+nav {
+	text-align: center;
+	background-color: #E6D6A9;
+	padding: 10px;
+}
+li {
+	font-size: 22px;
+}
+main {
+	padding: 20px;
+	display: block;
+}
+#hero {
+	height: 400px;
+	color:#F5F5DC;
+	background-image: url("heroroad.jpg");
+	background-size: 100% 100%;
+}
+.news {
+	margin-left: 20%;
+	margin-right: 20%;
+}
+footer {
+	background-color: #D2B48C;
+	color: #000000;
+	text-align: center;
+	padding: 10px;
+}   
+h3 {
+	background-color: #ffdd99;
+}

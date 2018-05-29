@@ -1,0 +1,16 @@
+body { background-color: #FFFFFF;
+      color: #666666;
+}
+header { background-color: purple;
+       color: yellow;
+}
+h1 {margin-bottom: 0; 
+} 
+nav { background-color: orange; 
+}
+h2 { color: #3399CC;
+}
+dt { color: #000033; 
+}
+.resort {color: #5C7FA3; 
+}	   

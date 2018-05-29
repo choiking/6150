@@ -1,0 +1,140 @@
+.input-group {
+    padding-top: 3%;
+
+}
+.input-group-btn {
+    padding-top: 7.4%;
+
+}
+.navbar {
+    margin-bottom: 0;
+    background-color: #e3eafe;
+    font-family: Tahoma;
+    z-index: 9999;
+    border: 0;
+    font-size: 14px !important;
+    line-height: 1.42857143 !important;
+    letter-spacing: 2px;
+    border-radius: 0;
+}
+.navbar li a, .navbar .navbar-brand {
+    color: #0a0a0a !important;
+}
+.navbar-nav li a:hover, .navbar-nav li.active a {
+    color: #fdac16 !important;
+    background-color: rgba(221,253,94,0.21) !important;
+}
+
+.navbar-default {
+    border-color: transparent;
+    color: #fff !important;
+}
+
+
+.jumbotron {
+    background-image: url("../images/buy.gif");
+}
+
+.test ul {
+    list-style: none;
+    padding-left: 0.001%;
+}
+
+.test li {
+    float: left;
+    width: 150px;
+    background: #CCC;
+    margin-left: 10px;
+    line-height: 30px;
+}
+
+.test a {
+    display: block;
+    height: 30px;
+}
+
+.test a:link {
+    color: #666;
+    background: #CCC;
+    text-decoration: none;
+}
+
+.test a:visited {
+    color: #666;
+    text-decoration: underline;
+}
+
+.test a:hover {
+    color: #FFF;
+    font-weight: bold;
+    text-decoration: none;
+    background: #761c19 no-repeat 5px 12px;
+}
+
+.test{
+    padding-top: 0.02%;
+    padding-left: 28%;
+}
+
+.input-group{
+    padding-top: 0.025%;
+    padding-left: 28.7%;
+}
+.input-group-btn{
+    padding-top: 0.03%;
+}
+
+
+
+
+
+
+@import url(https://fonts.googleapis.com/css?family=Open+Sans);
+
+body{
+    background: #f2f2f2;
+    font-family: 'Open Sans', sans-serif;
+}
+
+.search {
+    width: 100%;
+    position: relative
+}
+
+.searchTerm {
+    float: left;
+    width: 100%;
+    border: 3px solid #00B4CC;
+    padding: 5px;
+    height: 20px;
+    border-radius: 5px;
+    outline: none;
+    color: #9DBFAF;
+}
+
+.searchTerm:focus{
+    color: #00B4CC;
+}
+
+.searchButton {
+    position: absolute;
+    right: -50px;
+    width: 40px;
+    height: 36px;
+    border: 1px solid #00B4CC;
+    background: #00B4CC;
+    text-align: center;
+    color: #fff;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 20px;
+}
+
+/*Resize the wrap to see the search bar change!*/
+.wrap{
+    width: 30%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}

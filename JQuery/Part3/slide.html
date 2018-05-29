@@ -1,0 +1,94 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<title>Sliding Tabbed Panels</title>
+		<link type="text/css" rel="stylesheet" href="slide.css" />
+		<script
+          src="https://code.jquery.com/jquery-3.1.1.min.js"
+          integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="
+          crossorigin="anonymous"></script>
+		<script >
+            var panelWidth = 0;
+            var startPanel = 2;
+
+            $(document).ready(function() {
+
+                $('.sp .tabs').css('display','block');
+                $('.sp .panel_container .panel').css({'position':'absolute', 'height':'400px'});
+                $('.sp .panel_container .panels').css({'position':'absolute', 'top':'0px'});
+
+                window.panelWidth = $('.sp').width();	
+
+                $('.panel_container .panel').each(function(index){
+                    $(this).css({'width':window.panelWidth+'px','left':(index*window.panelWidth)});
+                });
+
+                $('.sp .tabs span').each(function(){
+                    $(this).on('click', function(){
+                        changePanels( $(this).index() );
+                    });
+                });
+
+                $('.sp .tabs span:nth-child('+window.startPanel+')').trigger('click');
+
+            });
+
+
+            function changePanels(index){
+
+                var newPanelPosition = ( window.panelWidth * index ) * -1;
+                var newPanelHeight = $('.sp .panel:nth-child('+(index+1)+')').find('.panel_content').height() + 15;
+
+                $('.sp .tabs span').removeClass('selected');
+                $('.sp .tabs span:nth-child('+(index+1)+')').addClass('selected');
+
+                $('.sp .panels').animate({left:newPanelPosition},1000);
+                $('.sp .panel_container').animate({height:newPanelHeight},1000);
+
+            }
+        
+        </script>
+        
+	</head>
+	<body>
+
+		
+		
+		<!-- Begin - Sliding Tabbed Panels -->
+		<div class="sp">
+			<div class="tabs">
+				<span class="ipad">Tab 1</span><span class="video">Tab 2</span><span class="photo">Tab 3</span>
+			</div>
+			<div class="panel_container">
+				<div class="panels">
+					<div class="panel">
+						<div class="panel_content">
+							<h2>Filling text for Tab 1</h2>
+							<p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim. Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu. In enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo. Nullam dictum felis eu pede mollis pretium.</p>
+							
+						</div>
+					</div>
+					<div class="panel">
+						<div class="panel_content">
+							<h2>Filling text for Tab 2</h2>
+							<p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim. Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu. In enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo. Nullam dictum felis eu pede mollis pretium.</p>
+							
+							
+						</div>
+					</div>
+					<div class="panel">
+						<div class="panel_content">
+							<h2>Filling text for Tab 3</h2>
+							<p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim. Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu. In enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo. Nullam dictum felis eu pede mollis pretium. Integer tincidunt. Cras dapibus. Vivamus elementum semper nisi. Aenean vulputate eleifend tellus. Aenean leo ligula, porttitor eu, consequat vitae, eleifend ac, enim. Aliquam lorem ante, dapibus in, viverra quis, feugiat a, tellus. Phasellus viverra nulla ut metus varius laoreet.</p>
+							
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!-- End - Sliding Tabbed Panels -->
+		
+		
+
+	</body>
+</html>
