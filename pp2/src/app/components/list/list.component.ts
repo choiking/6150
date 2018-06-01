@@ -1,7 +1,9 @@
+
+import {takeUntil} from 'rxjs/operators';
 import { Component, OnInit, OnDestroy } from '@angular/core';
 import { MainService } from '../../services/main.service';
-import 'rxjs/add/operator/takeUntil';
-import { Subject } from 'rxjs/Subject';
+
+import { Subject } from 'rxjs';
 import { Store } from '@ngrx/store';
 import { AppStore } from '../../app.store';
 
@@ -36,8 +38,8 @@ export class ListComponent implements OnInit, OnDestroy {
   }
 
   getproductsList() {
-    this.database.getproductss()
-      .takeUntil(this.ngUnsubscribe)
+    this.database.getproductss().pipe(
+      takeUntil(this.ngUnsubscribe))
       .subscribe(productss => {
         this.productsList = productss;
         this.store.dispatch({type: 'LOAD_SUCCEEDED'});
@@ -46,8 +48,8 @@ export class ListComponent implements OnInit, OnDestroy {
 
   RateproductsList() {
 
-        this.database.getproductss()
-      .takeUntil(this.ngUnsubscribe)
+        this.database.getproductss().pipe(
+      takeUntil(this.ngUnsubscribe))
       .subscribe(productss => {
 
         this.productsList = productss;
@@ -73,8 +75,8 @@ this.onSearch(s);
 
   LengthproductsList(){
 
-        this.database.getproductss()
-      .takeUntil(this.ngUnsubscribe)
+        this.database.getproductss().pipe(
+      takeUntil(this.ngUnsubscribe))
       .subscribe(productss => {
 
         this.productsList = productss;
@@ -100,8 +102,8 @@ this.onSearch(s);
 
   PriceproductsList(){
 
-        this.database.getproductss()
-      .takeUntil(this.ngUnsubscribe)
+        this.database.getproductss().pipe(
+      takeUntil(this.ngUnsubscribe))
       .subscribe(productss => {
 
         this.productsList = productss;
@@ -126,8 +128,8 @@ this.onSearch(s);
   }
 
   getGenres(){
-    this.database.getGenres()
-        .takeUntil(this.ngUnsubscribe)
+    this.database.getGenres().pipe(
+        takeUntil(this.ngUnsubscribe))
         .subscribe(genres => {
           this.genres = Object.keys(genres);
         });
@@ -148,8 +150,8 @@ this.onSearch(s);
   }
 
   setBanner(){
-    this.database.getcartproducts(24)
-        .takeUntil(this.ngUnsubscribe)
+    this.database.getcartproducts(24).pipe(
+        takeUntil(this.ngUnsubscribe))
         .subscribe(products => this.banner = products);
   }
 

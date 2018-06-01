@@ -1,7 +1,6 @@
 import { Injectable } from "@angular/core";
 import { StorageService } from "../services/storage.service";
-import { Observable } from "rxjs/Observable";
-import { Observer } from "rxjs/Observer";
+import { Observable ,  Observer } from "rxjs";
 import { CartItem } from "../_models/cart-item";
 import { Product } from "../_models/product";
 import { ShoppingCart } from "../_models/shopping-cart";

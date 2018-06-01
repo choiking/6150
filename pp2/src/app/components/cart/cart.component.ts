@@ -1,12 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 
 import { ShoppingCartService } from "../../services/shopping-cart.service";
-import { Observable } from "rxjs/Observable";
-import { Observer } from "rxjs/Observer";
+import { Observable ,  Observer ,  Subscription } from "rxjs";
 import { Product } from "../../_models/product";
 import { ShoppingCart } from "../../_models/shopping-cart";
 import { CartItem } from "../../_models/cart-item";
-import { Subscription } from "rxjs/Subscription";
 import { ProductsDataService } from "../../services/product.service";
 
 interface ICartItemWithProduct extends CartItem {

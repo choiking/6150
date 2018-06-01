@@ -1,15 +1,15 @@
+
+import {takeUntil, switchMap} from 'rxjs/operators';
 import { Component, OnInit, OnDestroy } from '@angular/core';
 import { MainService } from '../../services/main.service';
 import { ActivatedRoute, ParamMap } from '@angular/router';
-import 'rxjs/add/operator/switchMap';
-import 'rxjs/add/operator/takeUntil';
-import { Subject } from 'rxjs/Subject';
+
+
+import { Subject ,  Observable ,  Observer } from 'rxjs';
 import { Store } from '@ngrx/store';
 import { AppStore } from '../../app.store';
 
 import { ShoppingCartService } from "../../services/shopping-cart.service";
-import { Observable } from "rxjs/Observable";
-import { Observer } from "rxjs/Observer";
 import { Product } from "../../_models/product";
 import { ShoppingCart } from "../../_models/shopping-cart";
 
@@ -57,11 +57,11 @@ export class DetailsComponent implements OnInit, OnDestroy {
 
 
   ngOnInit() {
-    this.route.paramMap
-        .switchMap((params: ParamMap) =>
+    this.route.paramMap.pipe(
+        switchMap((params: ParamMap) =>
           this.service.getcartproducts(+params.get('id'))
-        )
-        .takeUntil(this.ngUnsubscribe)
+        ),
+        takeUntil(this.ngUnsubscribe),)
         .subscribe(cartproducts => {
           this.products = cartproducts;
           this.pageIsReady = true;

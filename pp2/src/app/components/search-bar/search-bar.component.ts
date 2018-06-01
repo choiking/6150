@@ -1,10 +1,13 @@
+
+import {fromEvent as observableFromEvent,  Observable } from 'rxjs';
+
+import {map, distinctUntilChanged, debounceTime} from 'rxjs/operators';
 import { Component, OnInit, Output, EventEmitter, ViewChild, ElementRef } from '@angular/core';
-import { Observable } from 'rxjs/Observable';
-import 'rxjs/add/observable/fromEvent';
+
 import "rxjs/add/operator/debounceTime";
 import "rxjs/add/operator/distinctUntilChanged";
-import 'rxjs/add/operator/switchMap';
-import 'rxjs/add/operator/map';
+
+
 
 @Component({
   selector: 'app-search-bar',
@@ -18,16 +21,16 @@ export class SearchBarComponent implements OnInit {
   constructor() { }
 
   ngOnInit() {
-    Observable.fromEvent(
+    observableFromEvent(
       this.searchInput.nativeElement, 'keyup'
-    )
-    .debounceTime(500)
-    .distinctUntilChanged()
-    .map(
+    ).pipe(
+    debounceTime(500),
+    distinctUntilChanged(),
+    map(
       (event: KeyboardEvent) => 
         (<HTMLInputElement>event.target).value
       
-    ).subscribe(value => this.searchChange.emit(value));
+    ),).subscribe(value => this.searchChange.emit(value));
   }
 
 }

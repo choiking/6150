@@ -1,8 +1,9 @@
+
+import {of as observableOf,  Observable } from 'rxjs';
 import { Injectable } from '@angular/core';
 import { genreType } from './products.model';
 import { productsS } from './products.mock-data';
-import { Observable } from 'rxjs/Observable';
-import 'rxjs/add/observable/of';
+
 
 @Injectable()
 export class MainService {
@@ -12,16 +13,16 @@ export class MainService {
   genres = genreType;
 
   getproductss(): Observable<any> {
-    return Observable.of(this.productsList);
+    return observableOf(this.productsList);
   }
 
   getcartproducts(id): Observable<any> {
     let selectedproducts = this.productsList.filter(products => products.id === id);
-    return Observable.of(selectedproducts[0]);
+    return observableOf(selectedproducts[0]);
   }
 
   getGenres(): Observable<any> {
-    return Observable.of(this.genres);
+    return observableOf(this.genres);
   }
 
 }
